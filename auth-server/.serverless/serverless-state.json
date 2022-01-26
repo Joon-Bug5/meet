@@ -193,7 +193,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/auth-server/dev/1643215386711-2022-01-26T16:43:06.711Z/auth-server.zip"
+                "S3Key": "serverless/auth-server/dev/1643216339535-2022-01-26T16:58:59.535Z/auth-server.zip"
               },
               "Handler": "handler.getAuthURL",
               "Runtime": "nodejs12.x",
@@ -226,7 +226,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/auth-server/dev/1643215386711-2022-01-26T16:43:06.711Z/auth-server.zip"
+                "S3Key": "serverless/auth-server/dev/1643216339535-2022-01-26T16:58:59.535Z/auth-server.zip"
               },
               "Handler": "handler.getAccessToken",
               "Runtime": "nodejs12.x",
@@ -259,7 +259,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/auth-server/dev/1643215386711-2022-01-26T16:43:06.711Z/auth-server.zip"
+                "S3Key": "serverless/auth-server/dev/1643216339535-2022-01-26T16:58:59.535Z/auth-server.zip"
               },
               "Handler": "handler.getCalendarEvents",
               "Runtime": "nodejs12.x",
@@ -540,7 +540,7 @@
               "GetCalendarEventsLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1643215377390": {
+          "ApiGatewayDeployment1643216337398": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -892,7 +892,7 @@
     "artifact": "C:\\Users\\david\\Documents\\CareerFoundry\\meet\\auth-server\\.serverless\\auth-server.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/auth-server/dev/1643215386711-2022-01-26T16:43:06.711Z",
+    "artifactDirectoryName": "serverless/auth-server/dev/1643216339535-2022-01-26T16:58:59.535Z",
     "artifact": "auth-server.zip"
   }
 }
