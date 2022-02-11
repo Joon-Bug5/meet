@@ -49,8 +49,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        {!navigator.onLine ? (<WarningAlert text="Offline. No new events until you have internet connection." />) :
-         (<WarningAlert text=''  />)}
+        {!navigator.onLine ? (<WarningAlert text="You are offline! No new updates!" />) : (<WarningAlert text=''  />)}
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
         <EventList events={this.state.events} />
