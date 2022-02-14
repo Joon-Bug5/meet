@@ -6,6 +6,7 @@ import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import './nprogress.css'
 import { WarningAlert } from './Alert';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class App extends Component {
   state = {
@@ -48,12 +49,24 @@ class App extends Component {
   }
   render() {
     return (
+      <Container className='app-container' fluid>
       <div className='App'>
-        {!navigator.onLine ? (<WarningAlert text="You are offline! No new updates!" />) : (<WarningAlert text=''  />)}
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
-        <EventList events={this.state.events} />
-      </div>
+      {!navigator.onLine ? (<WarningAlert text="You are offline! No new updates!" />) : (<WarningAlert text=''  />)}
+        <Row>
+          <Col>
+          <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+          </Col>
+          
+          <Col>
+          <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
+          </Col>
+
+          <Col>
+          <EventList events={this.state.events} />
+          </Col>
+        </Row>
+        </div>
+      </Container>
     );
   }
 }

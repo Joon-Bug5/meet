@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { InfoAlert } from './Alert';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class CitySearch extends Component {
   state = {
@@ -41,8 +42,14 @@ class CitySearch extends Component {
 
   render() {
     return(
+      <Container className='app-container' fluid>
       <div className='CitySearch'>
+        <Row>
         <InfoAlert text={this.state.infoText} />
+        </Row>
+        <Row>
+          <Col>
+          <p><b>Search Events by City</b></p>
         <input
           type='text'
           className='city'
@@ -61,7 +68,10 @@ class CitySearch extends Component {
             <b>See all cities</b>
           </li>
         </ul>
+        </Col>
+        </Row>
       </div>
+      </Container>
     );
   }
 }
