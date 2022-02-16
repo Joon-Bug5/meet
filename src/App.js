@@ -9,6 +9,7 @@ import { WarningAlert } from './Alert';
 import { Container, Row, Col } from 'react-bootstrap';
 import WelcomeScreen from './WelcomeScreen';
 import {ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
+import EventGenre from './EventGenre';
 
 class App extends Component {
   state = {
@@ -75,6 +76,7 @@ class App extends Component {
       <Container className='app-container' fluid>
       <div className='App'>
       {!navigator.onLine ? (<WarningAlert text="You are offline! No new updates!" />) : (<WarningAlert text=''  />)}
+      <h1>Meet App</h1>
         <Row>
           <Col>
             <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
@@ -85,15 +87,24 @@ class App extends Component {
           </Col>
 
           <Col>
-        <ResponsiveContainer height={400} >
-          <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-            <CartesianGrid />
-            <XAxis type="category" dataKey="city" name="city" />
-            <YAxis allowDecimals={false} type="number" dataKey="number" name="number of events" />
-            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-            <Scatter data={this.getData()} fill="#8884d8" />
-          </ScatterChart>
-        </ResponsiveContainer>
+            <h4>Events in each city</h4>
+
+          <EventGenre events={this.state.events} />
+          <ResponsiveContainer height={400} >
+            <ScatterChart
+              width={400}
+              height={400}
+              margin={{
+                top: 20, right: 20, bottom: 20, left: 20,
+                }}
+              >
+                <CartesianGrid />
+                <XAxis type="category" dataKey="city" name="city" />
+                <YAxis type="number" dataKey="number" name="number of events" />
+                <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                <Scatter data={this.getData()} fill="#8884d8" />
+            </ScatterChart>
+          </ResponsiveContainer>
           </Col>
 
           <Col>
